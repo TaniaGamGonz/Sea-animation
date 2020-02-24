@@ -1,0 +1,59 @@
+@import '_mixins';
+
+.sky{
+    position: relative;
+    width: 100vw;
+    height: 200px;
+    background-image: linear-gradient(to bottom, rgba(18,169,224,1) 0%, rgba(113,206,239,1) 59%, rgba(252,252,252,1) 100%);
+
+    &::before{
+        content: 'sun';
+        position: absolute;
+        top: 20px;
+        left: 40%;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-image: radial-gradient(ellipse at center, rgba(245,239,208,1) 0%, rgba(250,231,128,1) 54%, rgba(246,214,92,1) 74%, rgba(240,191,45,1) 100%);
+        color: transparent;
+    }
+}
+
+.cloud{
+    left: 50px;
+    top: 80px;
+    position: relative;
+    width: 130px;
+    height: 60px;
+    background-color: #fff;
+    opacity: 0.9; 
+    border-radius: 30px;   
+
+    &::after, &::before{
+        content: '';
+        position: absolute;
+        background-color: #fff; 
+        border-radius: 50%;       
+    }
+    &::after{
+        left: 38px;
+        bottom: 22px;
+        width: 70px;
+        height: 70px;    
+    }
+    &::before{
+        
+    }
+}
+
+
+
+
+
+.sea{
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 220px);
+    background-color: turquoise;
+   
+}

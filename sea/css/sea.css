@@ -1,0 +1,41 @@
+.sky {
+  position: relative;
+  width: 100vw;
+  height: 200px;
+  background-image: linear-gradient(to bottom, #12a9e0 0%, #71ceef 59%, #fcfcfc 100%); }
+  .sky::before {
+    content: 'sun';
+    position: absolute;
+    top: 20px;
+    left: 40%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-image: radial-gradient(ellipse at center, #f5efd0 0%, #fae780 54%, #f6d65c 74%, #f0bf2d 100%);
+    color: transparent; }
+
+.cloud {
+  left: 50px;
+  top: 80px;
+  position: relative;
+  width: 130px;
+  height: 60px;
+  background-color: #fff;
+  opacity: 0.9;
+  border-radius: 30px; }
+  .cloud::after, .cloud::before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%; }
+  .cloud::after {
+    left: 38px;
+    bottom: 22px;
+    width: 70px;
+    height: 70px; }
+
+.sea {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 220px);
+  background-color: turquoise; }
