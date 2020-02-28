@@ -1,4 +1,6 @@
 @import '_mixins';
+@import '_reset';
+@import '_animations';
 
 .sky{
     position: relative;
@@ -7,7 +9,7 @@
     background-image: linear-gradient(to bottom, rgba(18,169,224,1) 0%, rgba(113,206,239,1) 59%, rgba(252,252,252,1) 100%);
 
     &::before{
-        content: 'sun';
+        content: '';
         position: absolute;
         top: 20px;
         left: 40%;
@@ -20,31 +22,30 @@
 }
 
 .cloud{
-    left: 50px;
     top: 80px;
-    position: relative;
-    width: 130px;
-    height: 60px;
-    background-color: #fff;
-    opacity: 0.9; 
-    border-radius: 30px;   
+    left: 0vw;
+    @include cloud($size: m,$color: #fff);
+    animation-name: moveX;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 
-    &::after, &::before{
-        content: '';
-        position: absolute;
-        background-color: #fff; 
-        border-radius: 50%;       
-    }
-    &::after{
-        left: 38px;
-        bottom: 22px;
-        width: 70px;
-        height: 70px;    
-    }
-    &::before{
-        
+    &--s{
+        top: 0px;
+        left: -10vw;
+        @include cloud($size: s,$color: #fff);
+        animation-name: moveX;
+        animation-duration: 40s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-delay: 3s;
+    
     }
 }
+
+
+
+
 
 
 
@@ -53,7 +54,6 @@
 .sea{
     position: relative;
     width: 100vw;
-    height: calc(100vh - 220px);
-    background-color: turquoise;
-   
+    height: calc(100vh - 200px);
+    background-image: linear-gradient(180deg, rgba(21,200,255,1) 0%, rgba(3,54,150,1) 100%);
 }

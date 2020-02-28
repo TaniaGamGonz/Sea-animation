@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 
 gulp.task('sass', () => {
-    return gulp.src('sea/scss/**.scss')
+    return gulp.src('sea/scss/sea.scss')
     .pipe(sass())
     .pipe(gulp.dest('sea/css'))
 });
