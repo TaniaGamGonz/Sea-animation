@@ -9,7 +9,10 @@
   "author": "\"Tania Gamero Gonzalez\"",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.5.0",
     "gulp": "^4.0.2",
+    "gulp-browserify": "^0.5.1",
     "gulp-sass": "^4.0.2"
   }
 }

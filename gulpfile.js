@@ -1,13 +1,30 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
+const gulp     = require('gulp');
+const gulpSass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
 
-gulp.task('sass', () => {
+function sass (){
+
     return gulp.src('sea/scss/sea.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('sea/css'))
-});
+               .pipe(gulpSass())
+               .pipe(gulp.dest('sea/css'))
+}
 
 
-gulp.task('watch', () =>{ 
-  return  gulp.watch('sea/scss/sea.scss',  gulp.series('sass'))
-});
+function watch(){ 
+
+  return  gulp.watch('sea/scss/sea.scss',  gulp.series(sass)).on('change', browserSync.reload);
+};
+
+function browSync() {
+  browserSync.init({
+      server: {
+          baseDir: "./sea"
+      }
+  });
+};
+
+
+
+exports.sass  = sass;
+exports.watch = watch;
+exports.server = gulp.series( sass, gulp.parallel(watch, browSync));
